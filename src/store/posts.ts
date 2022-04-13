@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios"
-export const titleCounter=defineStore('card',{
+export const postCounter=defineStore('posts',{
     state: () => {
         return {
           posts: [],
@@ -9,7 +9,9 @@ export const titleCounter=defineStore('card',{
     actions:{
     getPost(){
         axios.get('https://jsonplaceholder.typicode.com/posts').then(
-            (res)=>console.log(res)
+            (res)=>{
+              this.posts=res.data
+            }
         
         ).then(err=>console.log(err))
     }

@@ -1,11 +1,13 @@
 <script >
 import {cartCounter} from "./store/cart.ts"
-import {titleCounter} from "./store/title.ts"
+import {postCounter} from "./store/posts.ts"
 export default{
   setup(){
 const store=cartCounter()
-const storeOne=titleCounter()
+const storeOne=postCounter()
+
 storeOne.getPost()
+
 return{store,storeOne}
   }
 }
